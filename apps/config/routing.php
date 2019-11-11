@@ -88,20 +88,20 @@ $di['router'] = function() use ($defaultModule, $modules, $di, $config) {
 				'action' => 3,
 				'params' => 4
 			));	
-		} else {
+		} 
 			
-			$webModuleRouting = APP_PATH . '/modules/'. $moduleName .'/config/routes/web.php';
-			
-			if (file_exists($webModuleRouting) && is_file($webModuleRouting)) {
-				include $webModuleRouting;
-			}
-
-			$apiModuleRouting = APP_PATH . '/modules/'. $moduleName .'/config/routes/api.php';
-			
-			if (file_exists($apiModuleRouting) && is_file($apiModuleRouting)) {
-				include $apiModuleRouting;
-			}
+		$webModuleRouting = APP_PATH . '/modules/'. $moduleName .'/config/routes/web.php';
+		
+		if (file_exists($webModuleRouting) && is_file($webModuleRouting)) {
+			include $webModuleRouting;
 		}
+
+		$apiModuleRouting = APP_PATH . '/modules/'. $moduleName .'/config/routes/api.php';
+		
+		if (file_exists($apiModuleRouting) && is_file($apiModuleRouting)) {
+			include $apiModuleRouting;
+		}
+		
 	}
 	
     $router->removeExtraSlashes(true);

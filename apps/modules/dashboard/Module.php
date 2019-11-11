@@ -17,6 +17,8 @@ class Module implements ModuleDefinitionInterface
             'Phalcon\Init\Dashboard\Controllers\Api' => __DIR__ . '/controllers/api',
             'Phalcon\Init\Dashboard\Models' => __DIR__ . '/models',
         ]);
+        // $router = $di->getRouter();
+        // $router->mount(new Config\ModuleRoutes());
 
         $loader->register();
     }
@@ -26,6 +28,7 @@ class Module implements ModuleDefinitionInterface
         $moduleConfig = require __DIR__ . '/config/config.php';
 
         $di->get('config')->merge($moduleConfig);
+
 
         include_once __DIR__ . '/config/services.php';
     }
