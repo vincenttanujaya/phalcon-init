@@ -17,6 +17,7 @@ class IdeasController extends Controller
     }
 
     public function storeAction(){
+        echo($this->request->getPost());
         $ideas = new IdeasModel();
         $ideas->user_id = 1;
         $ideas->title = "foo";
