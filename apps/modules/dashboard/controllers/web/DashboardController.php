@@ -10,4 +10,8 @@ class DashboardController extends Controller
     {
         $this->view->pick('dashboard/index');
     }
+
+    public function randomAction(){
+        echo("asu");
+    }
 }
