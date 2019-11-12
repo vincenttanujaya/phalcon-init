@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>SUBMIT IDEA</h1>
-    <form action="<?= $this->url->get('/ideas/add') ?>" method="POST">
+    <form action="<?= $this->url->get('/ideas/add') ?>" method="get">
         Title:<br>
         <input type="text" name="title" placeholder="Your brilliant idea title">
         <br>
@@ -15,9 +15,11 @@
         <input type="submit" value="Submit">
     </form> 
     <h1>LIST IDEAS</h1>
+    <?php foreach ($ideas as $idea) { ?>
     <ul>
-        <li><?= $ideas->title ?></li>
-        <li><?= $ideas->description ?></li>
+        <li><?= $idea->title ?></li>
+        <li><?= $idea->description ?></li>
     </ul>
+    <?php } ?>
 </body>
 </html>
