@@ -4,7 +4,6 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div><button>Create an Idea</button></div>
-    <div><button>List Ideas</button></div>
+    <h1>Hello World! from Dashboard Module</h1>
 </body>
 </html>
