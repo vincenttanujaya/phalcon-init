@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Hello World! from Dashboard Module: Page IDEAS</h1>
+    <?php foreach ($ideas as $idea) { ?>
+    <ul>
+        <li><?= $idea->title ?></li>
+        <li><?= $idea->description ?></li>
+    </ul>
+    <?php } ?>
+</body>
+</html>
