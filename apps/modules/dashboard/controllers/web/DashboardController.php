@@ -12,6 +12,6 @@ class DashboardController extends Controller
     }
 
     public function randomAction(){
-        echo("asu");
+        echo("coba");
     }
 }

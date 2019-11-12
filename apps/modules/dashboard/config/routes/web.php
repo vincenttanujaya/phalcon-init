@@ -1,6 +1,6 @@
 <?php
 
-$router->add('/asu',[
+$router->add('/coba',[
     'module' => 'dashboard',
     'namespace' => 'Phalcon\Init\Dashboard\Controllers\Web\\',
     'controller'=>'Dashboard',
