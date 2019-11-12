@@ -11,12 +11,12 @@ $router->add('/ideas',[
     'module' => 'dashboard',
     'namespace' => 'Phalcon\Init\Dashboard\Controllers\Web\\',
     'controller'=>'Ideas',
-    'action'=>'store',
+    'action'=>'index',
 ]);
 
-$router->add('/ideas',[
+$router->add('/ideas/add',[
     'module' => 'dashboard',
     'namespace' => 'Phalcon\Init\Dashboard\Controllers\Web\\',
     'controller'=>'Ideas',
-    'action'=>'index',
+    'action'=>'store',
 ]);
