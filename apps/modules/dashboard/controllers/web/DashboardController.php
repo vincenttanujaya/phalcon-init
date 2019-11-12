@@ -2,6 +2,7 @@
 
 namespace Phalcon\Init\Dashboard\Controllers\Web;
 
+use Phalcon\Init\Dashboard\Models\UserModel;
 use Phalcon\Mvc\Controller;
 
 class DashboardController extends Controller
@@ -12,6 +13,7 @@ class DashboardController extends Controller
     }
 
     public function randomAction(){
-        echo("coba");
+        $user = UserModel::find();
+        echo count($user);
     }
 }
