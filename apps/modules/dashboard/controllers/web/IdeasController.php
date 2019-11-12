@@ -2,15 +2,17 @@
 
 namespace Phalcon\Init\Dashboard\Controllers\Web;
 
+use Phalcon\Init\Dashboard\Domain\IdeaDomain;
 use Phalcon\Init\Dashboard\Models\IdeasModel;
 use Phalcon\Mvc\Controller;
 
 class IdeasController extends Controller
 {
+    
     public function indexAction()
     {
-        $ideas = IdeasModel::findFirst();
-
+        $ideaDomain = new IdeaDomain();
+        $ideas = $ideaDomain->getAll();
         $this->view->ideas = $ideas;
         $this->view->pick('ideas/index');
     }

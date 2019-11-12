@@ -11,7 +11,8 @@ $loader->registerNamespaces(array(
 	 */
 	//'Phalcon\Db\Adapter\Pdo' => APP_PATH . '/lib/Phalcon/Db/Adapter/Pdo',
 	//'Phalcon\Db\Dialect' => APP_PATH . '/lib/Phalcon/Db/Dialect',
-	//'Phalcon\Db\Result' => APP_PATH . '/lib/Phalcon/Db/Result',
+	'Phalcon\Init\Dashboard\Domain' => APP_PATH . '/modules/dashboard/domain',
+	'Phalcon\Init\Dashboard\Presentation' => APP_PATH . '/modules/dashboard/presentation',
 
 ));
 
