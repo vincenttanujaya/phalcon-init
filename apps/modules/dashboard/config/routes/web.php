@@ -19,4 +19,12 @@ $router->add('/ideas/add',[
     'namespace' => 'Phalcon\Init\Dashboard\Controllers\Web\\',
     'controller'=>'Ideas',
     'action'=>'store',
-])->setName('ideas-add');
+])->setName('ideas-add')->via(['POST']);
+
+
+$router->add('/ideas/rate',[
+    'module' => 'dashboard',
+    'namespace' => 'Phalcon\Init\Dashboard\Controllers\Web\\',
+    'controller'=>'Ideas',
+    'action'=>'rate',
+])->setName('ideas-rate')->via(['POST']);

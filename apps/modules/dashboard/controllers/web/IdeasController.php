@@ -33,8 +33,13 @@ class IdeasController extends Controller
                 echo $message, "\n";
             }
         } else {
+            $this->flashSession->success('Sukses menyimpan');
             $this->response->redirect('/ideas');
             $this->view->disable();
         }
+    }
+
+    public function rateAction(){
+        echo $this->request->getPost('id');
     }
 }
