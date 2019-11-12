@@ -6,12 +6,12 @@
 <body>
 <<<<<<< HEAD
     <h1>SUBMIT IDEA</h1>
-    <form action="{{ url('/ideas/add') }}" method="POST">
+    <form action="{{ url(['for': 'ideas-add']) }}" method="POST">
         Title:<br>
         <input type="text" name="title" placeholder="Your brilliant idea title">
         <br>
         Description:<br>
-        <input type="text" name="decription" placeholder="Pour your explanation here">
+        <input type="text" name="description" placeholder="Pour your explanation here">
         <br><br>
         <input type="submit" value="Submit">
     </form> 

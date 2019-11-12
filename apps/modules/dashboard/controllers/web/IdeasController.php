@@ -17,11 +17,10 @@ class IdeasController extends Controller
     }
 
     public function storeAction(){
-        echo($this->request->getPost());
         $ideas = new IdeasModel();
         $ideas->user_id = 1;
-        $ideas->title = "foo";
-        $ideas->description = "lorem ipsum dolor sit amet";
+        $ideas->title = $this->request->getPost('title');
+        $ideas->description = $this->request->getPost('description');
 
         if ($ideas->save() === false) {
             echo "Umh, We can't store ideas right now: \n";

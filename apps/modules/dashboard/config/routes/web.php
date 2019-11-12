@@ -19,4 +19,4 @@ $router->add('/ideas/add',[
     'namespace' => 'Phalcon\Init\Dashboard\Controllers\Web\\',
     'controller'=>'Ideas',
     'action'=>'store',
-]);
+])->setName('ideas-add');
