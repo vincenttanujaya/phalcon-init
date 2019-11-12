@@ -8,12 +8,11 @@ use Phalcon\Mvc\Controller;
 
 class IdeasController extends Controller
 {
-    
     public function indexAction()
     {
         $ideaDomain = new IdeaDomain();
         $ideas = $ideaDomain->getAll();
-        $this->view->ideas = $ideas;
+        $this->view->ideas = $ideas['data'];
         $this->view->pick('ideas/index');
     }
 
