@@ -5,6 +5,7 @@ namespace Phalcon\Init\Dashboard\Controllers\Web;
 use Phalcon\Init\Dashboard\Domain\IdeaDomain;
 use Phalcon\Init\Dashboard\Models\IdeasModel;
 use Phalcon\Mvc\Controller;
+use Phalcon\Http\Request;
 
 class IdeasController extends Controller
 {
@@ -12,16 +13,16 @@ class IdeasController extends Controller
     {
         $ideaDomain = new IdeaDomain();
         $ideas = $ideaDomain->getAll();
+
         $this->view->ideas = $ideas['data'];
         $this->view->pick('ideas/index');
     }
 
     public function storeAction(){
-        echo($this->request->getPost());
         $ideas = new IdeasModel();
         $ideas->user_id = 1;
-        $ideas->title = "foo";
-        $ideas->description = "lorem ipsum dolor sit amet";
+        $ideas->title = $this->request->getPost('title');
+        $ideas->description = $this->request->getPost('description');
 
         if ($ideas->save() === false) {
             echo "Umh, We can't store ideas right now: \n";
@@ -32,7 +33,13 @@ class IdeasController extends Controller
                 echo $message, "\n";
             }
         } else {
-            echo 'Great, a new ideas was saved successfully!';
+            $this->flashSession->success('Sukses menyimpan');
+            $this->response->redirect('/ideas');
+            $this->view->disable();
         }
+    }
+
+    public function rateAction(){
+        echo $this->request->getPost('id');
     }
 }
