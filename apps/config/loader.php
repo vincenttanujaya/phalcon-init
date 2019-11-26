@@ -13,6 +13,7 @@ $loader->registerNamespaces(array(
 	//'Phalcon\Db\Dialect' => APP_PATH . '/lib/Phalcon/Db/Dialect',
 	'Phalcon\Init\Dashboard\Domain' => APP_PATH . '/modules/dashboard/domain',
 	'Phalcon\Init\Dashboard\Presentation' => APP_PATH . '/modules/dashboard/presentation',
+	'Phalcon\Init\Dashboard\Dto' => APP_PATH . '/modules/dashboard/dto',
 
 ));
 
